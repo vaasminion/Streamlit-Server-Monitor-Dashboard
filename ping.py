@@ -12,5 +12,7 @@ def ping_check(host, count=1):
   """
   param = '-c' if os.name == 'posix' else '-n'  # Adjust for OS compatibility
   command = f"ping {param} {count} {host}"
-  result = subprocess.run(command.split(), capture_output=True)
+  #result = subprocess.run(command.split(), capture_output=True)
+  result = subprocess.run(command,capture_output=True,shell=True)
+
   return result.returncode == 0
