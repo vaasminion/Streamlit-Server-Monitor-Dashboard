@@ -40,7 +40,9 @@ if not server_list:
 else:
 
     st.header('SERVER HEALTH CHECK REPORT')
-    st.header(f'LAST UPDATED ON {datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}')
+    ist_offset = datetime.timedelta(hours=5, minutes=30)
+    currenttime = datetime.datetime.now() + ist_offset
+    st.header(f'LAST UPDATED ON {currenttime.strftime("%m/%d/%Y, %H:%M:%S")} IST')
     server_data = get_server_status(server_list)
     st.table(server_data)
     # # Refresh button for manual updates
