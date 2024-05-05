@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    build:
+      context: "./"
+      dockerfile: "Dockerfile"
+    image: "streamlit-servermoniterdashboard"
+    container_name: "streamlit-servermoniterdashboard-container"
+    ports:
+    - 8001:8080
+    environment:
+        MONITER_SERVERJSONFILE: "/app/server.json"
+    restart: on-failure
