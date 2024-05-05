@@ -5,7 +5,7 @@ services:
       context: "./"
       dockerfile: "Dockerfile"
     image: "streamlit-servermoniterdashboard"
-    container_name: "streamlit-servermoniterdashboard-container"
+    container_name: "st-servermondashboard-con"
     ports:
     - 8001:8080
     environment:
